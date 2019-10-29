@@ -16,5 +16,10 @@ def create_app(env):
     app.config.from_object(config.configuration[env])
     # set up secret key
     app.secret_key = os.urandom(24)
+
+    #register blueprints to the app
+    from .v1 import v1_blueprint
+    app.register_blueprint(v1_blueprint)
+
     # initialize the object
     return app
