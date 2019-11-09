@@ -7,4 +7,4 @@ from flask import Blueprint
 v1_blueprint = Blueprint('v1', __name__, url_prefix='/api/v1')
 
 # import views
-from . import views
+from .views import views
