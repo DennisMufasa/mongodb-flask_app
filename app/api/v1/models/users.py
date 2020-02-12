@@ -33,7 +33,7 @@ class User(utils.Database):
             return "New user saved, user_id - {}".format(save_user.inserted_id)
         utils.password_checker(password)
 
-    def find_username(self, email):
+    def find_user(self, email):
         '''find user details using their email'''
         user_details = self.users.find({"email": email}, {"_id": 0, "password": 0})
         
@@ -47,6 +47,7 @@ class User(utils.Database):
         return output
 
     def fetch_all_users(self):
+        '''fetch all users from database'''
         all_users = self.users.find({}, {"_id": 0, "password": 0})
 
         output = list()
