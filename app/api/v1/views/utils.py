@@ -1,16 +1,24 @@
 '''helper functions for the views'''
 def check_user_data(user_data):
     '''a function to ensure user data is all present'''
+
+    if isinstance(user_data, dict) is False:
+        return 'user data should be passed as a dictionary object'
+
     user_data_labels = ["username", "password", "email", "role"]
 
-    messsage = ""
-
-    if not user_data:
-        return "Enter user information"
-
+    '''check if all labels are present'''
     for i in range(len(user_data_labels)):
-        if user_data_labels[i] not in user_data:
-            messsage = "Missing {}".format(user_data_labels[i])
-            return messsage
+        if user_data_labels[i] in user_data:
+            continue
+        else:
+            return 'Keyword {} is missing from user data'.format(user_data_labels[i])
 
-    return "user data all present"
+    '''check for empty values in the user credentials'''
+    for key, value in user_data.items():
+        if len(value) > 0:
+            continue
+        else:
+            return '{} is missing a value!'.format(key)
+
+    return 'All keywords present'
