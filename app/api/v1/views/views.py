@@ -25,7 +25,7 @@ def register():
             return make_response(jsonify({"message": 'Enter user credentials to register!'}), 406)
 
         #check if captured user data is all present
-        if 'All keywords present' == utils.check_user_data(request_data):
+        if 'All user data present' == utils.check_user_data(request_data):
             new_user = User()
             add_user = new_user.save_user(request_data['username'],
             request_data['password'],request_data['email'],request_data['role'])

@@ -21,4 +21,4 @@ def check_user_data(user_data):
         else:
             return '{} is missing a value!'.format(key)
 
-    return 'All keywords present'
+    return 'All user data present'
