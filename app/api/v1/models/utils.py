@@ -1,28 +1,8 @@
 '''utility functions used in the models'''
 
-import re
-
-def password_checker(password):
-    '''a function to check user passwords'''
-    # check length
-    if len(password) > 12 or len(password) < 6:
-        return 'password error'
-    return 'password ok'
-
-def email_checker(email):
-    '''a function to check for an @ in the email'''
-    if bool(re.search(r'[@]', email)) is False:
-        return 'email error'
-    return 'email ok'
-
-
-# set up the database
-
-
 # third-party import
 import pymongo
 import datetime
-
 
 
 class Database:

@@ -35,16 +35,18 @@ class User(utils.Database):
 
     def find_user(self, email):
         '''find user details using their email'''
-        user_details = self.users.find({"email": email}, {"_id": 0, "password": 0})
+        all_users = self.users.find({}, {"_id": 0})
         
-        output = dict()
+        output = list()
 
-        for detail in user_details:
-            output.update(detail)
+        for each_user in all_users:
+            output.append(each_user)
         
-        if not output:
-            return 'email is not registered'
-        return output
+        for i in range(len(output)):
+            if email != output[i]['email']:
+                continue
+            return output[i]
+        return 'User not registered!'
 
     def fetch_all_users(self):
         '''fetch all users from database'''

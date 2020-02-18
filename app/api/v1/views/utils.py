@@ -1,4 +1,7 @@
 '''helper functions for the views'''
+
+import re
+
 def check_user_data(user_data):
     '''a function to ensure user data is all present'''
 
@@ -20,5 +23,12 @@ def check_user_data(user_data):
             continue
         else:
             return '{} is missing a value!'.format(key)
+
+    if len(user_data['password']) > 12 or len(user_data['password']) < 6:
+        return 'password length should be between 6 and 12 characters long!'
+        
+    if bool(re.search('[@]', user_data['email'])) is False:
+        return 'Invalid email address!'
+    
 
     return 'All user data present'
