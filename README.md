@@ -1,0 +1,11 @@
+# mongodb-flask_app
+Flask API endpoints that fetch data from mongodb
+
+## Set up
+1. Download and install the mongodb server from their website mongodb.com
+2. Manually input some dummy data into your database to test the app login feature.
+3. Clone this repository into your local machine
+4. Open this app on your text editor preferably VS code.
+5. Install the application dependencies in the requiremts.txt `pip3 freeze > requirents.txt`
+6. Export the development environment and the flask app on the terminal
+7. Run the app. `flask run`
