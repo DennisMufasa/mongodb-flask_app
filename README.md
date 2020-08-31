@@ -9,3 +9,4 @@ Flask API endpoints that fetch data from mongodb
 5. Install the application dependencies in the requiremts.txt `pip3 freeze > requirents.txt`
 6. Export the development environment and the flask app on the terminal
 7. Run the app. `flask run`
+8. To run an endpoint use the following blueprint `127.0.0.1:5000/api/v1/login`
