@@ -2,7 +2,7 @@
 Flask API endpoints that fetch data from mongodb
 
 ## Set up
-1. Download and install the mongodb server from their website mongodb.com
+1. Download and install the mongodb server from their website mongodb.org
 2. Manually input some dummy data into your database to test the app login feature.
 3. Clone this repository into your local machine
 4. Open this app on your text editor preferably VS code.
